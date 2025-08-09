@@ -1,0 +1,724 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    background-color: #33a7c7;
+    font-family: 'Lato';
+    overflow-x: hidden;
+}
+
+#header-titulo {
+    font-family: 'Lato';
+    font-size: 3em;
+    color: white;
+}
+
+#header-titulo h1 {
+  margin-top: 3em;
+}
+
+#header-imagen {
+    width: 5.5em;
+    border-radius: 50%;
+}
+
+#inicio-imagen {
+  border-radius: 50%;
+
+}
+
+header, #header-titulo, .fa-cart-shopping {
+    background-color: rgb(0, 0, 0);  
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em 0em;
+    border-bottom: 0.34em white solid;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    color: white;
+    font-size: 1.7em;
+    display: inline-block;
+}
+
+#nav-siempre a:hover {
+    color: lightgray;
+    transition: 0.4s ease;
+    
+    transform: scale(1.05);
+}
+#nav-opcional a:hover {
+    color: rgb(0, 0, 0);
+    transition: 0.3s ease;
+    
+    transform: scale(1);
+}
+
+#aclaracion {
+  text-align: center;
+  color: white;
+  font-size: 0.7em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+.fa-cart-shopping {
+    color: white;
+    position: fixed;
+    top: 0.6em;
+    right: 1em;
+    font-size: 2.4em;
+    background-color: #1a1a1a; 
+    padding: 0.5em;
+    border-radius: 50%;
+    z-index: 1000; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+  }
+
+.fa-solid:hover {
+  background-color: #303030;
+  transition: 0.3s ease;
+}
+  
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    padding: 0.1em;
+    list-style: none;
+    margin-top: 0.05em;
+    font-size: 1.6em;
+    border-radius: 0.4em;
+  }
+
+  .nav-opciones:hover .submenu {
+    display: block;
+  }
+  
+  .submenu li {
+    margin: 0.1em;
+  }
+  
+  .submenu a {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    padding: 0.3em 0.8em;
+    display: block;
+    white-space: nowrap;
+
+  }
+  
+  .submenu a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    border-radius: 3px;
+  }
+  
+  .nosotros {
+    color: rgb(255, 255, 255);
+    margin: 5% 5%;
+    font-size: 1.6em;
+  }
+
+
+li {
+    list-style-type: none;
+}
+
+.nosotros-intro {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.nosotros-llegamos {
+  gap: 1em;
+}
+
+
+.nosotros-intro, .nosotros-mision, .nosotros-diferencia, .nosotros-llegamos, .nosotros-pedido {
+  font-size: 1.2em;
+}
+
+.nosotros-mision {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.texto-mision {
+  margin-left: 1em;
+}
+
+
+.nosotros-diferencia {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.texto-diferencia {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
+.nosotros-llegamos {
+  
+  display: flex;
+  margin-bottom: 1em;
+  
+}
+
+.foto1, .foto2, .foto3, .foto4 {
+  max-width: 100%;  
+  height: 13em;
+  object-fit: cover;
+  border: 1.7px solid rgb(171, 214, 171); 
+}
+.nosotros {
+  font-size: clamp(1em, 2vw, 1.6em);
+}
+
+#header-imagen {
+  width: clamp(3.65em, 6vw, 5em);
+  height: auto;  
+  object-fit: contain;
+  background-color: rgb(14, 14, 14);
+}
+
+#header-titulo {
+  font-size: clamp(2em, 5vw, 3em);
+  margin-top: 0.13em;
+}
+
+.texto-llegamos {
+  margin-right: 2em;
+}
+
+#main-titulo {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25em;
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 2em;
+  margin-right: 0em;
+}
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  gap: 2em;
+  padding: 1em 5em;
+  color: black;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  background-color: white;
+  flex: 1 1 calc(25% - 2em);
+  border-radius: 1em;
+  overflow: hidden;
+  font-size: 0.95em;
+  max-width: 300px;
+  min-width: 250px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+
+
+.producto h3, .producto p, .producto h2 {
+  background-color: white;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.producto h2 {
+  margin-top: 0.2em;
+}
+
+.producto p {
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+}
+.producto h3 {
+  font-size: 1em;
+  padding: 0.5em 2em;
+  text-align: center;
+}
+
+.producto img {
+  max-width: 100%;
+  height: 11em;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+
+
+.producto-acciones {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  margin: 1em auto;
+  padding-bottom: 0.1em;
+}
+
+.boton-agregar, .cantidad {
+  background-color: white;
+  border: 2px solid black;
+  padding: 0.07em;
+}
+
+.boton-agregar {
+  background-color: #ff8127;
+  color: white;
+  border: none;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.boton-agregar:hover {
+  background-color: #ff6a00;
+}
+
+.cantidad {
+  width: 3em;
+  padding: 0.3em;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid #ff8127;
+  border-radius: 0.4em;
+  text-align: center;
+}
+
+.presentacion {
+  background-color: white;
+  border: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 0px 60px;
+  font-size:1.2em;
+  border: 1px solid black;
+}
+
+
+#carrito-menu {
+  position:fixed;
+  top:7em;
+  right: 2em;
+  background-color: white;
+  border-radius: 1em;
+  padding: 0.4em;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 25em;
+}
+#carrito-menu {
+  text-align: center;
+  
+}
+
+#carrito-menu h3, #carrito-menu button{
+  background-color: white;
+  font-size: 1.6em;
+} 
+
+#carrito-menu.oculto {
+  display: none;
+}
+
+#carrito-menu button {
+  background-color: #ff8127;
+  color: white;
+  border: none;
+  padding: 0.3em 0.5em;
+  font-size: 1em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 0.3em;
+
+}
+
+#carrito-menu button:hover {
+  background-color: #ff6a00;
+
+
+}
+
+.carrito-item, .acciones, .nombre, .precio {
+  background-color: white;
+
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr; 
+  align-items: center;
+  padding: 0.2em 0;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  gap: 0em;
+}
+
+.nombre, .precio {
+  margin-top: 0.2em;
+}
+
+.carrito-vacio {
+  background-color: white;
+  font-size: 1em;
+}
+
+
+
+#main-subtitulo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-family: "Lato";
+  border-width: 80%;
+  border-bottom: 3px solid #ccc;
+  width: 80%;
+  padding-bottom: 0.4em;
+  margin: auto;
+}
+
+#total-pedido {
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+
+#cantidad-items {
+  color: black;
+  background-color: white;
+  text-align: center;
+  font-size:  1em;
+}
+
+.mensaje-descuento, .carrito-info {
+  background-color: white;
+
+}
+
+.mensaje-descuento {
+  font-size: 0.75em;
+  color: green;
+  margin-top: 0.2em;
+  text-align: left;
+  max-width: 90%;
+  line-height: 1.2em;
+}
+
+.carrito-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-columna, .footer-columna a, .footer-columna h4, .footer-abajo p, .footer-columna  {
+  color: white;
+  background-color: #000000;
+  font-size: 1em;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #000000;
+  padding-top: 0.6em;
+}
+
+.footer-abajo {
+  text-align: center;
+  padding-top: 0.4em;
+  padding-bottom: 0.3em;
+  background-color: black;
+}
+
+.footer-columna a {
+  text-decoration: none;
+}
+.footer-columna a:hover {
+  color: gray;
+  transition: 0.3s ease;
+}
+
+
+footer {
+  background-color: black;
+}
+
+.fa-brands {
+  background-color: #000000;
+}
+
+.wpp {
+  font-size: 3.4em;
+  bottom: 0.2em;
+  position: fixed;
+  border-radius: 36%;
+  right: 0.7em;
+  padding: 0.2em;
+}
+
+
+.sub-elementos {
+  padding-top: 1em;
+}
+
+.inicio-prinicipal {
+  margin-top: 0.4em;
+  width: 100vw;
+  height: 100vh; /* toda la altura de la pantalla */
+  background-image: url('img/inicio.png'); /* ruta a tu fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; 
+  overflow: hidden;
+}
+
+#inicio-imagen {
+  width: 9em;
+  margin-bottom: 0.1em;
+  
+}
+
+#inicio-titulo {
+  font-size: 3em;
+  font-family: 'Lato', cursive;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#inicio-subtitulo {
+  font-size: 1em;
+  font-family: 'Lato', cursive;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+
+#inicio-imagen, #inicio-titulo, #inicio-subtitulo {
+  background-color: transparent;
+}
+
+#inicio-boton {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-top: 0.3em;
+  padding: 0.3em 0.3em;
+  border: 1px solid rgb(82, 146, 96);
+  background-color: #3191da;
+  color: white;
+  border: none;
+  font-size: 1em;
+  border-radius: 0.6em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#inicio-boton:hover {
+  background-color: #0091ff;
+  transform: scale(1.1);
+}
+
+#ubicacion-entrega {
+  width: 43%;
+  margin-top: 0.3em;
+  border: 1px solid black;
+  font-size: 1em;
+  padding: 0.4em;
+  font-family: "Lato";
+  color: black;
+  background-color: white;
+}
+
+#ubicacion-entrega::placeholder {
+  color: black;
+}
+
+
+@media screen and (max-width: 480px) {
+  .catalogo {
+    padding: 0.5em 1em;
+    gap: 0.6em;
+  }
+
+  .producto {
+    flex: 1 1 calc(50% - 0.4em); 
+    font-size: 0.9em;
+    border-radius: 0.5em;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .producto img {
+    height: 7em;
+    border-radius: 0.3em;
+  }
+
+  .producto h2, .producto h3, .producto p {
+    font-size: 0.85em;
+    margin: 0.05em 0;
+  }
+
+  .producto h2 {
+    font-size: 1.2em;
+  }
+
+  .producto h3 {
+    padding: 0.2em 0em;
+  }
+
+  .producto-acciones {
+    gap: 0.4em;
+    margin: 0.4em auto 0.3em;
+  }
+
+  .boton-agregar {
+    font-size: 1em;
+    padding: 0.5em 0.8em;
+    border-radius: 0.4em;
+  }
+
+  .cantidad {
+    width: 2.2em;
+    padding: 0.2em;
+    font-size: 0.75em;
+  }
+
+  .fa-cart-shopping {
+    font-size: 1.7em;
+    top: 0.5em;
+    right: 0.5em;
+    padding: 0.4em;
+  }
+
+  #carrito-menu {
+    top: 0.2em;
+    right: 4.3em;
+    padding: 0.3em;
+    font-size: 1em;
+    max-height: 11em;
+    border-radius: 0.7em;
+    width: 18em;
+    z-index: 300;
+  }
+
+  #carrito-menu button {
+    font-size: 1em;
+    padding: 0.3em 0.4em;
+    margin-top: 0.3em;
+  }
+
+  #main-titulo, #main-subtitulo {
+    font-size: 1.2em;
+    margin: 0.4em auto;
+  }
+
+  #main-subtitulo {
+    font-size: 1em;
+  }
+
+  #menu a{
+    font-size: 1.4em;
+    margin-left: 0.3em;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .inicio-prinicipal {
+    height: 90vh;
+
+  }
+
+  #inicio-imagen {
+    width: 8em;
+  }
+  
+  
+  .submenu {
+    font-size: 0.8em;
+    margin-top: 0.4em;
+  }
+
+  .foto1, .foto2, .foto3, .foto4 {
+    width: 20em;
+    height:11em;
+    margin-top: 1em;
+  }
+
+  .nosotros-intro, .nosotros-diferencia, .nosotros-llegamos, .nosotros-mision, .nosotros-pedido {
+    font-size: 0.9em;
+  }
+
+  .nosotros-intro img, .nosotros-diferencia img, .nosotros-llegamos img, .nosotros-mision img, .nosotros-pedido img {
+    object-fit: cover;
+  }
+
+  .nosotros {
+    padding: 0.1em;
+  }
+
+  .texto-llegamos {
+  margin-right: 0em;
+  }
+  .wpp {
+    font-size: 2.5em;
+    right: 0.28em;
+    padding: 0.2em;
+  }
+
+  #ubicacion-entrega {
+    font-size: 0.8em;
+    margin-top: 0.4em;
+    width: 48%;
+  }
+
+
+  .presentacion {
+    margin: 0px 1em;
+    font-size: 1em;
+  }
+}
+
+
+
