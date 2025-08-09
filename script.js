@@ -26,7 +26,6 @@ document.querySelectorAll(".boton-agregar").forEach((boton) => {
 
     const cantidad = parseInt(cantidadInput.value) || 1;
 
-    // NUEVA LÓGICA PARA PRECIO Y PRESENTACIÓN
     let precioBase = 0;
     const select = productoDiv.querySelector("select");
 
@@ -70,6 +69,16 @@ inputUbicacion.placeholder = "📍 Direccion de entrega";
 inputUbicacion.id = "ubicacion-entrega";
 carritoMenu.appendChild(inputUbicacion);
 
+// Selector de vendedor (nuevo)
+const selectVendedor = document.createElement("select");
+selectVendedor.id = "vendedor-pedido";
+  selectVendedor.innerHTML = `
+    <option value="">🛍️Vendedor</option>
+  <option value="Dario|543516707101">Dario</option>
+  <option value="Vanesa|543516707104">Vanesa</option>
+`;
+carritoMenu.appendChild(selectVendedor);
+
 // Total
 const totalPedidoSpan = document.createElement("span");
 totalPedidoSpan.id = "total-pedido";
@@ -91,20 +100,20 @@ botonEnviarWhatsapp.addEventListener("click", () => {
     return;
   }
 
+  const vendedorSeleccionado = selectVendedor.value;
+  if (!vendedorSeleccionado) {
+    alert("Debes seleccionar un vendedor antes de enviar el pedido.");
+    selectVendedor.focus();
+    return;
+  }
+  const [nombreVendedor, numeroVendedor] = vendedorSeleccionado.split("|");
+
   const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
   const totalPacks = carrito
     .filter(item => item.tipo === "pack")
     .reduce((sum, item) => sum + item.cantidad, 0);
 
-  let minimoUnidades;
-
-  if (totalPacks > 0) {
-    minimoUnidades = 1;
-  } else {
-    if (tipoCatalogo === "personal") minimoUnidades = 1;
-    else minimoUnidades = 1;
-  }
-
+  let minimoUnidades = totalPacks > 0 ? 1 : 1;
   if (totalProductos < minimoUnidades) {
     alert(`Debes agregar al menos ${minimoUnidades} unidades al carrito para poder enviar el pedido.`);
     return;
@@ -117,7 +126,7 @@ botonEnviarWhatsapp.addEventListener("click", () => {
     return;
   }
 
-  let mensaje = "🏷️  Solicitud de Pedido:%0A";
+  let mensaje = `🏷️ Pedido para ${nombreVendedor}:%0A`;
   const descuentoUnidad = calcularDescuentoPorUnidad();
 
   carrito.forEach(item => {
@@ -131,7 +140,6 @@ botonEnviarWhatsapp.addEventListener("click", () => {
     } else {
       mensaje += `- ${encodeURIComponent(item.nombre)}: ${item.cantidad} unidades | ($${precioUnitarioConDesc.toLocaleString()} x ${item.cantidad}un) | $${precioFinal.toLocaleString()}`;
     }
-
     mensaje += `%0A`;
   });
 
@@ -140,7 +148,6 @@ botonEnviarWhatsapp.addEventListener("click", () => {
 
   if (descuentoUnidad > 0) {
     let umbral = "";
-
     if (tipoCatalogo === "personal") {
       if (totalUnidades >= 10) umbral = "10 unidades";
       else if (totalUnidades >= 5) umbral = "5 unidades";
@@ -151,7 +158,6 @@ botonEnviarWhatsapp.addEventListener("click", () => {
       else if (totalUnidades >= 30) umbral = "30 unidades";
       else if (totalUnidades >= 10) umbral = "10 unidades";
     }
-
     mensaje += `%0A🧾 Total: $${total.toLocaleString()} | ${totalUnidades.toLocaleString()}un seleccionadas | Descuento aplicado por ${umbral}%0A`;
   } else {
     mensaje += `%0A🧾 Total: $${total.toLocaleString()}%0A`;
@@ -160,7 +166,7 @@ botonEnviarWhatsapp.addEventListener("click", () => {
   mensaje += `%0A📍 Entrega en: ${encodeURIComponent(ubicacion)}%0A`;
   mensaje += `%0A¡Gracias!`;
 
-  const urlWhatsapp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${mensaje}`;
+  const urlWhatsapp = `https://api.whatsapp.com/send?phone=${numeroVendedor || numeroWhatsapp}&text=${mensaje}`;
   const link = document.createElement("a");
   link.href = urlWhatsapp;
   link.target = "_blank";
