@@ -124,6 +124,21 @@ nav ul {
     white-space: nowrap;
 
   }
+
+  #vendedor-pedido {
+    width: 40%;
+    margin-top: 0.3em;
+    margin: auto;
+    border: 1px solid black;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.4em 0.4em;
+    color: black;
+    background-color: white;
+    margin-top: 0.3em;
+  }
   
   .submenu a:hover {
     color: rgb(255, 255, 255);
