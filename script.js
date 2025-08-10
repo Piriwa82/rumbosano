@@ -187,8 +187,8 @@ function calcularDescuentoPorUnidad() {
   }
 
   if (tipoCatalogo === "mayorista") {
-    if (totalUnidades >= 50) return 460;
-    if (totalUnidades >= 30) return 310;
+    if (totalUnidades >= 50) return 300;
+    if (totalUnidades >= 30) return 210;
     if (totalUnidades >= 10) return 160;
     return 0;
   }
@@ -285,3 +285,4 @@ function agregarEventosBotonesCantidad() {
     });
   });
 }
+
