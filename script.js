@@ -76,7 +76,7 @@ selectVendedor.id = "vendedor-pedido";
     <option value="">🛍️Vendedor</option>
   <option value="Dario|543516707101">Dario</option>
   <option value="Vanesa|543516707104">Vanesa</option>
-  <option value="Julia|543548541967">Vanesa</option>
+  <option value="Julia|543548541967">Julio</option>
 `;
 carritoMenu.appendChild(selectVendedor);
 
